@@ -8,8 +8,11 @@
 </head>
 <body>
     @foreach ($movies as $movie)
-        <h4>{{ $movie->title }}</h4>
-        <img src="{{ $movie->image }}" alt="Imagem"/>
+            <h4>{{ $movie->title }}</h4>
+            <div>País: {{ $movie->country->name }}</div>
+            <div>Data de Lançamento: {{ $movie->release }}</div>
+            <div>Sinopse: </div>
+            <img src="{{ $movie->image }}" alt="Imagem"/>
     @endforeach
 </body>
 </html>

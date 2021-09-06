@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Movie extends Model
+class Country extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,6 @@ class Movie extends Model
 
     public function country()
     {
-        return $this->belongsTo(Country::class);
+        return $this->HasOne(Movie::class);
     }
 }
