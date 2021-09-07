@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class Moviecontroller extends Controller
 {
@@ -14,7 +15,7 @@ class Moviecontroller extends Controller
     public function index()
     {
         $movies = Movie::all();
-        return view('movies', compact('movies'));
+        return view('movies.movies', compact('movies'));
     }
 
     /**
@@ -24,7 +25,7 @@ class Moviecontroller extends Controller
      */
     public function create()
     {
-        //
+        return view('movies.create');
     }
 
     /**
@@ -35,7 +36,13 @@ class Moviecontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $data['image'] = $request->file('image')->store('movies','public');
+
+        $movie = Movie::create($data);
+        return redirect(route('movies.index'));
+        
     }
 
     /**
@@ -57,7 +64,8 @@ class Moviecontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        $movie = Movie::find($id);
+        return view('movies.edit', compact('movie'));
     }
 
     /**
@@ -69,7 +77,17 @@ class Moviecontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->all();
+        $movie = Movie::find($id);
+
+        if($request->hasFile('image')){
+            Storage::delete('public/'. $movie->image);
+            $data['image'] = $request->file('image')->store('movies', 'public');
+        }
+        $movie->update($data);
+
+        return redirect(route('movies.index'));        
+        
     }
 
     /**
