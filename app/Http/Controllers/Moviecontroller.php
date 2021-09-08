@@ -53,7 +53,8 @@ class Moviecontroller extends Controller
      */
     public function show($id)
     {
-        //
+        $movie = Movie::find($title);
+        return view('movies.movies', compact('movies'));
     }
 
     /**
@@ -98,6 +99,11 @@ class Moviecontroller extends Controller
      */
     public function destroy($id)
     {
-        //
+        $movie = Movie::find($id);
+
+        Storage::delete('public/'. $movie->image);
+        $movie->delete($movie);
+
+        return redirect(route('movies.index')); 
     }
 }
