@@ -1,7 +1,7 @@
-<?php
+<?php  /*php artisan make:controller 'MovieController'*/
 
 namespace App\Http\Controllers;
-use App\Models\Movie;
+use App\Models\Movie;           /*importante*/
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -14,8 +14,16 @@ class Moviecontroller extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
-        return view('movies.movies', compact('movies'));
+        $search = request('search');
+        
+        $movies = Movie::where([
+            ['title','like','%'.$search.'%']])
+            ->orwhere([['genre','like','%'.$search.'%']])
+            ->orwhere([['release','like','%'.$search.'%']])
+            ->orwhere([['rating','like','%'.$search.'%']])
+            ->get();
+
+        return view('movies.movies', compact('movies','search'));
     }
 
     /**
@@ -53,9 +61,14 @@ class Moviecontroller extends Controller
      */
     public function show($id)
     {
-        $movie = Movie::find($title);
-        return view('movies.movies', compact('movies'));
+
     }
+
+    // public function search(Request $request)
+    // {
+    //     $filmes = Movie::where("title", "like", "%" . $request->search . "%")->get();
+    //     return view("movies", ["movies"->$filmes, 'search'->$request->search]);
+    // }
 
     /**
      * Show the form for editing the specified resource.

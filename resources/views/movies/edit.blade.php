@@ -8,7 +8,7 @@
 </head>
 <body>
     <form id="form-create" action="{{ route('movies.update', $movie->id) }}" method="POST" enctype="multipart/form-data">
-        @csrf
+        @csrf                      {{--Rota que leva ao controle, 'php artisan route:list' para conferir as rotas e respectivos metodos--}}
         @method('PUT')
         <input type="text" value="{{ $movie->title }}" name="title" required>
         <input type="text"  value="{{ $movie->genre }}" name="genre" required>

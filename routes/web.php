@@ -13,9 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
+// Route::get('/', function () {         | Local onde se define as rotas, que estão |
+//     return view('welcome');           | diretamente ligadas aos controllers      |
 // });
 
 
 Route::resource('/movies', MovieController::class);
+
+Route::get("movies/search", [MovieController::class, "search"])->name("movie.search");
