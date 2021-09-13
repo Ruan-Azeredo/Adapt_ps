@@ -1,0 +1,151 @@
+body{
+    background-color: #21252f;
+}
+
+.container {
+    display: grid; 
+    grid-template-columns: 0.3fr 1.6fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      ". ."; 
+}
+
+.header{
+    height: 110px;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.main{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    width: 1050px;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+    margin: none;
+    padding: none;
+    border: none;
+    padding-left: 25px;
+}
+
+.aside{
+    height: 100%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    background-color: #13141e;
+    margin: 2px;
+}
+
+.search{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-text{
+    height: 30px;
+    width: 160px;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: #464649;
+    border: none;
+    padding: 10px;
+}
+
+.search-button{
+    height: 30px ;
+    width: 30px;
+    margin-top: 10px;
+    border-radius: 15px;
+    background-color: #295892;
+    color: white;
+    border: none;
+    font-size: 20px;
+}
+
+.button-aside{
+    width: 100%;
+    height: 60px;
+    background-color: transparent;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: rgb(190, 189, 194);
+    border: none;
+}
+
+.button-aside:hover{
+    color: #295892;
+}
+
+#checkbox{
+    /* display: none; */
+}
+
+input[type=checkbox]:checked ~ .search2 { /*!!!!!!*/
+    transform: color violet;
+}
+
+.container-movies{
+    width: 300px; /*!!!!!!!! */
+    margin: 30px;
+    padding: none;
+}
+
+.image{
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+}
+
+.image:hover{
+    transform: scale(120%);
+}
+
+.title{
+    font-size: 15px;
+    color: rgb(190, 189, 194);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.infos{
+    width: 300px;
+    height:200px;
+    background-color: #4a4c50;
+    border-radius: 20px;
+    padding: 10px;
+   
+}
+
+.especify{
+    margin: 5px;
+    font-size: 17px;
+    color: rgb(190, 189, 194);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.edit-e-delete{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.especify button{
+    border: 3px solid #295892;
+    color: rgb(190, 189, 194);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    background-color: transparent;
+    width: 100px;
+    height: 30px;
+    margin: 20px;
+}
+
+.create-area, .edit-area{
+    background-color: rgb(190, 189, 194);
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+}
