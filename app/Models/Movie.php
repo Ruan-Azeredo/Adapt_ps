@@ -17,7 +17,8 @@ class Movie extends Model
     'release',
     'synopsis',
     'rating',
-    'image',];
+    'image',
+    'image_poster',];
 
     public function country()
     {

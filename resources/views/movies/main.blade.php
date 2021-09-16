@@ -9,7 +9,30 @@
     
 </head>
 <body>
-    @yield('content')
-    <footer>Footer to test<footer>
+    <div class='container'>
+        <header class='header initial'>
+            <form action="{{ route("movies.index") }}" method="get" class='search'>
+                @csrf
+                <div class='header-container'>
+                    <input type="text" name="search" required placeholder="Search" class='search-text'/>
+                    <button type="submit" class='search-button'>&#8981;</button>
+                </div>
+                <img src='img/logoBRA.png' class='logo-adapti'>
+            </form>
+        </header>
+
+        <div class='spacement-header'></div>
+
+        <aside class='aside'>
+            <a href="{{ route('movies.index') }}"><img src='img/pagina-inicial.png' class='link-aside home'></a>
+            <a href="{{ route('movies.create') }}"><img src='img/new-document.png' class='link-aside create'></a> {{--Botão para ir para o ambiente de criação de um novo filme --}}
+        </aside>
+
+        <div class='spacement-aside'></div>
+
+        @yield('content')
+
+        <footer>Footer to test<footer>
+    </div>
 </body>
 </html>
