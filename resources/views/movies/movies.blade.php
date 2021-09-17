@@ -8,17 +8,16 @@
         
         <div class='container-poster'>
             @foreach ($movies as $movie)
+                <div class='gradient'></div>
                 <img src="/storage/{{ $movie->image_poster }}" class='image-poster'>
-            @endforeach
-            @foreach ($movies as $movie)
                 <div class='poster-box'>
                     <div class='poster-box2'>
-                        <h4 class='write-poster title-poster'>{{ $movie->title }}</h4>
-                        <h4 class='write-poster rating-poster'>{{ $movie->rating }}</h4>
+                        <div class='write-poster title-poster'>{{ $movie->title }}</div>
+                        <div class='write-poster rating-poster'>&#9733;&#9733;&#9733;&#9733;&#9733;              {{ $movie->rating }}</div>
                     </div>
                 </div>
             @endforeach
-            <div class='gradient'></div>
+
         </div>
 
         <main class='main'>

@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="/css/style.css">
     <title>@yield('title')</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class='container'>
@@ -28,7 +31,7 @@
             <a href="{{ route('movies.create') }}"><img src='img/new-document.png' class='link-aside create'></a> {{--Botão para ir para o ambiente de criação de um novo filme --}}
         </aside>
 
-        <div class='spacement-aside'></div>
+        {{-- <div class='spacement-aside'></div> --}}
 
         @yield('content')
 
