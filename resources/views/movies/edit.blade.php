@@ -5,7 +5,7 @@
 @section('content')
 
     <form id="form-edit" action="{{ route('movies.update', $movie->id) }}" method="POST" enctype="multipart/form-data">
-        <div class='form-flex'>
+        {{-- <div class='form-flex'> --}}
             @csrf                      {{--Rota que leva ao controle, 'php artisan route:list' para conferir as rotas e respectivos metodos--}}
             @method('PUT')
             <div class='div-edit title-edit-container'>
@@ -43,7 +43,7 @@
                 <img src="/storage/{{ $movie->image_poster }}" class='img-poster-edit'>
             </div>
             <button type="submit" class='save-button'>Salvar</button>
-        </div>
+        {{-- </div> --}}
     </form>
 @endsection
 

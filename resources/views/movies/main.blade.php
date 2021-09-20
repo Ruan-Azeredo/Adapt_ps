@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 </head>
 <body>
     <div class='container'>
@@ -19,23 +21,32 @@
                 <div class='header-container'>
                     <input type="text" name="search" required placeholder="Search" class='search-text'/>
                     <button type="submit" class='search-button'>&#8981;</button>
+</button>
                 </div>
-                <img src='img/logoBRA.png' class='logo-adapti'>
+                <a href='https://www.adapti.info/'><img src="{{URL::asset('img/logoBRA.png')}}" class='logo-adapti'></a>
             </form>
         </header>
 
         <div class='spacement-header'></div>
 
         <aside class='aside'>
-            <a href="{{ route('movies.index') }}"><img src='img/pagina-inicial.png' class='link-aside home'></a>
-            <a href="{{ route('movies.create') }}"><img src='img/new-document.png' class='link-aside create'></a> {{--Botão para ir para o ambiente de criação de um novo filme --}}
+            <a href="{{ route('movies.index') }}"><i class="fas fa-home"></i></a>
+            <a href="{{ route('movies.create') }}"><i class="far fa-file-video"></i></a> {{--Botão para ir para o ambiente de criação de um novo filme --}}
         </aside>
 
         {{-- <div class='spacement-aside'></div> --}}
 
         @yield('content')
 
-        <footer>Footer to test<footer>
+        <footer class='footer'><div> Developed by Ruan with &#9825; for Adapti-Soluções Web  2021</div>
+            <div class='redes'>
+                <a href='https://www.instagram.com/adapti.ps/'><i class="fab fa-instagram"></i></a>
+                <a href='https://www.instagram.com/adapti.ps/'><i class="fab fa-facebook-square"></i></a>
+            </div>
+        <footer>
     </div>
 </body>
+{{-- @section('script')
+<script src="/js/script.js"></script>
+@endsection --}}
 </html>
