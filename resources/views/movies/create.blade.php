@@ -28,6 +28,10 @@
                     <h4 class='create-description'>Rating</h4>
                     <input type="text" name="rating" required class='create-area rating-create'>
                 </div>
+                <div class='div-create trailer-create-container'>
+                    <h4 class='create-description'>Trailer</h4>
+                    <input type='url' name="trailer" class='create-area trailer-create'>
+                </div>
                 <div class='div-create synopsis-create-container'>
                     <h4 class='create-description'>Synopsis</h4>
                     <textarea name="synopsis" id="synopsis" cols="30" rows="10" class='create-area synopsis-create'></textarea>

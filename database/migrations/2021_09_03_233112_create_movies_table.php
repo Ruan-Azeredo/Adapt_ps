@@ -23,6 +23,7 @@ class CreateMoviesTable extends Migration
             $table->string('release',255);
             $table->text('synopsis',1000); 
             $table->string('rating',255);
+            $table->string('trailer',455);
             $table->string('image');
             $table->string('image_poster');
         });

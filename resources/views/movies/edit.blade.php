@@ -28,6 +28,10 @@
                 <h4 class='edit-description'>Rating</h4>
                 <input type="text" value="{{ $movie->rating }}" name="rating" required class='edit-area rating-edit'>
             </div>
+            <div class='div-edit trailer-edit-container'>
+                <h4 class='edit-description'>Trailer</h4>
+                <input type='url' value="{{ $movie->trailer }}" name="trailer" class='edit-area trailer-edit'>
+            </div>
             <div class='div-edit synopsis-edit-container'>
                 <h4 class='edit-description'>Synopsis</h4>
                 <textarea name="synopsis" id="synopsis"  cols="30" rows="10" class='edit-area synopsis-edit'>{{ $movie->synopsis }}</textarea>

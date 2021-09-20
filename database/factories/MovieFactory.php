@@ -29,6 +29,7 @@ class MovieFactory extends Factory
             'country_id' => $this->faker->unique()->numberBetween(1,10),
             'synopsis' => $this->faker->text(),
             'rating' => "9.8",
+            'trailer' => '',
             'image' => '',
             'image_poster' => ''
         ];

@@ -25,7 +25,8 @@
                     <div class='container-movies'>
                         <div class='cont-img-name'>
                             <img src="{{ url("/storage/{$movie->image}") }}" alt="{{ $movie->title }}" class='image'>
-                            <h4 class='title'>{{ $movie->title }}</h4>       
+                            <h4 class='title'>{{ $movie->title }}</h4>
+                            <i class="fas fa-play"></i>    
                         </div>
                         <input type="checkbox" id="ossm" name="ossm" class='button-hiden'> 
                         <label for="ossm">
@@ -39,11 +40,17 @@
                                     <form id="form-delete" action="{{ route('movies.destroy',$movie->id) }}" method="POST"> {{--Botão de delete de um filme--}}
                                         @csrf {{--Filtro de proteção que deve ter em todos os blades--}}
                                         @method('delete') {{--Forma de adicionar DELETE ou PUT ou PATCH--}}
-                                        <a type="submit" class='especify delete button'><button>Delete</button></a>
+                                        <a action='deletar' class='especify delete button'><button onclick='funcao1()'>Delete</button></a>
                                     </form>
                                 </div>
-                            </label>
-                        </div>
+                            </div>
+                        </label>
+                        <input type="checkbox" id="osst" name="osst" class='button-video'> 
+                        <label for="osst">
+                            <div class='trailer'>
+                                <iframe width="533" height="300" src="{{ $movie->trailer }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                        </label>
                     </div>
             @endforeach
         </main>

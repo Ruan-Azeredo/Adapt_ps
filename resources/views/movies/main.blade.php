@@ -21,7 +21,6 @@
                 <div class='header-container'>
                     <input type="text" name="search" required placeholder="Search" class='search-text'/>
                     <button type="submit" class='search-button'>&#8981;</button>
-</button>
                 </div>
                 <a href='https://www.adapti.info/'><img src="{{URL::asset('img/logoBRA.png')}}" class='logo-adapti'></a>
             </form>
@@ -32,9 +31,10 @@
         <aside class='aside'>
             <a href="{{ route('movies.index') }}"><i class="fas fa-home"></i></a>
             <a href="{{ route('movies.create') }}"><i class="far fa-file-video"></i></a> {{--Botão para ir para o ambiente de criação de um novo filme --}}
+            <button id="theme-toggle" class="button-dark-light" type="button">
+                <i class="fas fa-adjust"></i>
+            </button>
         </aside>
-
-        {{-- <div class='spacement-aside'></div> --}}
 
         @yield('content')
 
@@ -46,7 +46,5 @@
         <footer>
     </div>
 </body>
-{{-- @section('script')
-<script src="/js/script.js"></script>
-@endsection --}}
+<script src="{{ asset('/js/script.js') }}"></script>
 </html>

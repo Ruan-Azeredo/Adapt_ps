@@ -43,23 +43,24 @@ table {
 }
 
 :root{
+    --propriety-logo: invert(0);
     --cor-de-fundo: rgb(2, 1, 14);
     --cor-layout: #13141e;
     --cor-fundo-text: #464649d0;
     --cor-letra-clara: rgb(190, 189, 194);
     --cor-btn: #295892;
-    --cor-branco: rgba(240, 240, 240, 0.822);
+    --cor-branco: rgb(190, 189, 194);
 }
 
-/* :root.container{
-    --cor-de-fundo: rgb(255, 255, 255);
-    --cor-layout: #13141e;
-    --cor-fundo-text: #464649d0;
-    --cor-letra-clara: rgb(190, 189, 194);
-    --cor-btn: #295892;
-    --cor-branco: rgba(240, 240, 240, 0.822);
-} */
-
+[data-theme='light']{
+    --propriety-logo: invert(60%);
+    --cor-de-fundo: #e8e7e9;
+    --cor-layout: #fefdff;
+    --cor-branco: #4c4c52;
+    --cor-letra-clara:#27272b;
+    --cor-fundo-text: #8d8d91d0;
+    --cor-btn: #63baf3;
+}
 
 body{
     background-color: var(--cor-de-fundo);
@@ -110,10 +111,6 @@ body{
     margin-bottom: 100px;
     padding: none;
     border: none;
-    /* display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 30px; */
-
 }
 
 .aside{
@@ -121,7 +118,7 @@ body{
     margin-top: 150px;
     margin-left: 60px;
     padding: 5px;
-    height: 150px;
+    height: 200px;
     width: 60px;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -130,15 +127,6 @@ body{
     position: fixed;
     border-radius: 50px;
 }
-
-/* .spacement-aside{
-    height: 600px;
-    width: 100px;
-    grid-column-start: 1;
-    grid-column-end: 2;
-    background-color: transparent;
-} */
-
 .header-container{
     display: flex;
     flex-direction: row-reverse;
@@ -203,7 +191,7 @@ body{
     margin-top: 30px;
 }
 
-.fa-home, .fa-file-video{
+.fa-home, .fa-file-video, .fa-adjust{
     color: var(--cor-branco);
     font-size: 40px;
 }
@@ -217,11 +205,11 @@ body{
 }
 
 .fa-file-video:hover{
-    color: #295892;
+    color: var(--cor-btn);
 }
 
 .fa-home:hover{
-    color: #295892;
+    color: var(--cor-btn);
 }
 
 .redes{
@@ -242,10 +230,28 @@ body{
     color: var(--cor-layout);
 }
 
+.fa-play{
+    color: var(--cor-branco);
+}
+
+.button-dark-light{
+    background-color: transparent;
+    border: none;
+    
+}
+
+.fa-adjust{
+    padding: 5px 4px
+}
+
+.fa-adjust:hover{
+    color: var(--cor-btn);
+}
+
 .container-movies{
     margin: 30px;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; 
     padding: none;
 }
 
@@ -275,9 +281,9 @@ body{
 .infos{
     width: 300px;
     height:300px;
-    background-color: #4a4c50;
+    background-color: transparent;
     border-radius: 5px;
-    margin: 0;
+    margin-left: 15px;
     z-index: 1;
 }
 
@@ -295,9 +301,8 @@ label{
 input[type=checkbox]:checked + label {
     animation: swip 0.3s;
     transform: rotateY(0deg);
-    width: 300px;
-  } 
-
+    width: 100%;
+} 
 
 @keyframes swip{
     0%{
@@ -323,12 +328,22 @@ input[type=checkbox]:checked + label {
     position: absolute;
 }
 
+.button-video{
+    width: 200px;
+    height: 25px;
+    appearance: none;
+    transform: translateY(335px);
+    z-index: 1;
+    position: absolute;
+}
+
 .especify{
     padding: 10px;
     font-size: 17px;
-    color: rgb(190, 189, 194);
+    color: var(--cor-branco);
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
+    text-align: left
 }
 
 .edit-e-delete{
@@ -338,8 +353,8 @@ input[type=checkbox]:checked + label {
 }
 
 .especify button{
-    border: 3px solid #295892;
-    color: rgb(190, 189, 194);
+    border: 3px solid var(--cor-btn);
+    color: var(--cor-branco);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
     background-color: transparent;
@@ -373,9 +388,7 @@ input[type=checkbox]:checked + label {
     width: 1349px;
     height: 800px;
     position: static;
-    /* border-radius: 30px; */
     animation: slide 100s infinite; /*!!  20-200  !!*/
-
     -webkit-mask-image: linear-gradient(to right,rgba(0, 0, 0, 0.01)30%, rgba(0, 0, 0, 0.363)60%, rgb(2, 1, 14)100%);
     mask-image: linear-gradient(to top, transparent 5%, black 100%);
     animation-timing-function:cubic-bezier(.08,.04,0,.98)
@@ -404,17 +417,6 @@ input[type=checkbox]:checked + label {
     100%{transform: translateX(-13490px);}
 }
 
-/* .gradient{
-    height: 500px;
-    width: 1349px;
-    margin: 0;
-    background:linear-gradient(to left, rgba(0, 0, 0, 0.247), rgb(2, 1, 14)80%);
-    opacity: 0.2;
-    position: relative;
-    animation: slide 1000s infinite; 
-    animation-timing-function:cubic-bezier(.08,.04,0,.98)
-*/
-
 .poster-box{
     display: flex;
     width: 300px;
@@ -436,7 +438,7 @@ input[type=checkbox]:checked + label {
 .write-poster{
     font-family: 'Montserrat', sans-serif;
     width: 500px;
-    color: cornsilk;
+    color: var(--cor-branco);
     margin-bottom: 30px;
 }
 
@@ -473,38 +475,22 @@ input[type=checkbox]:checked + label {
     margin-top: 5px;
     margin-left: 50px;
     position: relative;
+    filter: var(--propriety-logo);
 }
-
-/* .form-flex{
-    height: 500px;
-    width: 1000px;
-    background-color: transparent;
-    display: grid; 
-    grid-template-columns: 2fr 1fr 1fr; 
-    grid-template-rows: 20% 20% 10% 10% 20% 20%; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."
-    ". . ."; 
-} */
 
 #form-create, #form-edit{
     grid-column-start: 2;
     grid-column-end: 3;
     grid-row-start: 2;
     grid-row-end: 4;
-    height: 500px;
+    height: 55%;
     width: 1000px;
     margin-top: 10px;
     /* margin-left: 200px; */
     margin-bottom: 200px;
     position: relative;
     display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(800px, 1fr));
     grid-template-columns: 2fr 1fr 1fr; 
     grid-template-rows: 20% 20% 10% 10% 20% 20%; 
     gap: 0px 0px; 
@@ -563,8 +549,15 @@ input[type=checkbox]:checked + label {
     grid-row: 6 / 7;
 }
 
+.trailer-create-container, .trailer-edit-container{
+    grid-column: 3 / 4;
+    grid-row: 1 / 4;
+    padding-top: 130px;
+    padding-bottom: 90px;
+}
+
 .synopsis-create-container, .synopsis-edit-container{
-    grid-column: 2 / 4;
+    grid-column: 2 / 3;
     grid-row: 1 / 4;
 }
 
@@ -608,7 +601,7 @@ input[type=checkbox]:checked + label {
         width: 70%;
     }
     .container-poster{
-        width: 800px;
+        width: 900px;
     }
     .main{
         width: 70%;
@@ -618,5 +611,13 @@ input[type=checkbox]:checked + label {
 @media (max-width: 400px){
     .main{
         width: 50%;
+    }
+}
+
+@media(max-width: 948px){
+    #form-create, #form-edit{
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
     }
 }
